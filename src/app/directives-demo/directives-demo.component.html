@@ -1,0 +1,26 @@
+<div *ngIf="isLoggedIn">
+  Welcome, user!
+</div>
+
+<div *ngIf="!isLoggedIn">
+  Please log in.
+</div>
+
+<div *ngIf="condition">Content to render when condition is true.</div>
+
+<ng-template [ngIf]="condition">
+  <div>
+    Content to render when condition is true using template.
+  </div>
+</ng-template>
+
+<div *ngIf="condition; else elseBlock">Content to render when conditon is true.</div>
+<ng-template #elseBlock><div>Content to render when condition is false.</div></ng-template>
+
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock><div>Content to render when condition is true using thenBlock.</div></ng-template>
+<ng-template #elseBlock><div>Content to render when condition is false using elseBlock.</div></ng-template>
+
+<ul>
+  <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+</ul>
