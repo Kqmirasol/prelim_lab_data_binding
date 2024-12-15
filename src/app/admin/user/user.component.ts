@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-
+  user = {
+    name: 'Karlo Mirasol',
+    email: 'kqmirasol@icloud.com',
+    phone: '0961-903-0065',
+    address: 'Mabalacat City, Pampanga'
+  };
 }

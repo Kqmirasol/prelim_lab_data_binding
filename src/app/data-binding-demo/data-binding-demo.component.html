@@ -1,15 +1,42 @@
-<h1>{{ title }}</h1>
-<h3>{{ description }}</h3>
+<div class="container">
+  <!-- Angular Data Binding Section -->
+  <h2 class="section-title">Angular Data Binding</h2>
 
-<img [src]="imageUrl" [width]="w" [height]="h" [alt]="altText">
+  <!-- One-Way Data Binding -->
+  <div class="card one-way">
+    <h4 [style.color]="textColor">One-Way Data Binding (Interpolation)</h4>
+    <p>Hello, Welcome to back to Angular.</p>
+    <img [src]="imageUrl" [alt]="altText" [width]="w" [height]="h" />
+    <p>{{ name }}</p>
+  </div>
 
-<p [style.color]="textColor">This text is blue!</p>
+  <!-- Two-Way Data Binding -->
+  <div class="card two-way">
+    <h4 class="blue-text">Two-Way Data Binding (Forms)</h4>
+    <div>
+      <label>Your Full name</label>
+      <input [(ngModel)]="fullname" class="input-box" placeholder="Enter your full name" />
+    </div>
+    <div>
+      <label>Email Address</label>
+      <input [(ngModel)]="email" class="input-box" placeholder="Enter your email" />
+    </div>
+    <div class="preview-section">
+      <p>Preview:</p>
+      <p><strong>Name:</strong> {{ fullname }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+    </div>
+  </div>
 
-<p [class.highlighted]="isHighlighted">This text is highlighted!</p>
+  <!-- Event Binding -->
+  <div class="card event-binding">
+    <h4 class="blue-text">Event Binding</h4>
+    <div class="counter-buttons">
+      <button (click)="decrement()" class="btn red">-</button>
+      <span>{{ counter }}</span>
+      <button (click)="increment()" class="btn green">+</button>
+    </div>
+    <p>Click the buttons to adjust the counter!</p>
+  </div>
 
-<input [(ngModel)]="yourName" placeholder="Enter your name">
-<p>Hello, {{ yourName }}</p>
-
-<button (click)="increment()">Increment</button>
-<button (click)="decrement()">Decrement</button>
-<p>Count: {{ count }}</p>
+</div>

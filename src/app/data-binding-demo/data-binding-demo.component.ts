@@ -11,25 +11,25 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './data-binding-demo.component.css'
 })
 export class DataBindingDemoComponent {
-  title = "My First App!"
-  description = "This is my new Angular Application"
-
-  imageUrl = "../images/logo-angular.png";
-  w = 250;
-  h = 250;
-  altText = "Angular Logo";
+   // One-Way Data Binding
+  name = 'Karlo Mirasol';
+  imageUrl = '../images/avatar.png';
+  h=200;
+  w=200;
+  altText='Avatar';
 
   textColor = "blue";
-  isHighlighted = true;
 
-  yourName = "";
+  // Two-Way Data Binding
+  fullname = '';
+  email = '';
 
-  count = 0;
+  // Event Binding Counter
+  counter = 0;
   increment() {
-    this.count++;
+    this.counter++;
   }
   decrement() {
-    this.count--;
+    this.counter--;
   }
-
 }

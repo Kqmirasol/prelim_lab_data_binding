@@ -1,26 +1,46 @@
-<div *ngIf="isLoggedIn">
-  Welcome, user!
-</div>
+<div class="container">
+<!-- Angular Directives -->
+<h3 class="section-title">Angular Directives</h3>
 
-<div *ngIf="!isLoggedIn">
-  Please log in.
-</div>
-
-<div *ngIf="condition">Content to render when condition is true.</div>
-
-<ng-template [ngIf]="condition">
-  <div>
-    Content to render when condition is true using template.
+<!-- Dynamic Form Toggling -->
+<div class="card dynamic-form">
+  <h4 class="blue-text">Dynamic Form Toggling</h4>
+  <button (click)="toggleForm()" class="btn blue">
+    {{ showForm ? 'Hide Form' : 'Show Form' }}
+  </button>
+  <div *ngIf="showForm" class="form-box">
+    <form>
+      <label>Enter Name:</label>
+      <input />
+      <label>Email:</label>
+      <input />
+    </form>
   </div>
-</ng-template>
+</div>
 
-<div *ngIf="condition; else elseBlock">Content to render when conditon is true.</div>
-<ng-template #elseBlock><div>Content to render when condition is false.</div></ng-template>
+<!-- Dynamic Product List -->
+<div class="card product-list">
+  <h4 class="blue-text">Dynamic Product List</h4>
+  <button (click)="toggleStockHighlight()" class="btn blue">
+    Toggle Stock Highlight
+  </button>
+  <div class="product-row" *ngFor="let product of products"
+     [ngClass]="{
+        'highlight-green': highlightStock && product.inStock,
+        'highlight-red': highlightStock && !product.inStock
+     }">
+    <span class="product-name">{{ product.name }}</span>
+    <span class="product-price">${{ product.price }}</span>
+    <span class="stock-status" [ngClass]="product.inStock ? 'in-stock' : 'out-of-stock'">
+        {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+    </span>
+  </div>
+</div>
 
-<div *ngIf="condition; then thenBlock else elseBlock"></div>
-<ng-template #thenBlock><div>Content to render when condition is true using thenBlock.</div></ng-template>
-<ng-template #elseBlock><div>Content to render when condition is false using elseBlock.</div></ng-template>
 
-<ul>
-  <li *ngFor="let fruit of fruits">{{ fruit }}</li>
-</ul>
+<!-- Enable/Disable Button -->
+<div class="card enable-button">
+  <h4 class="blue-text">Enable/Disable Button</h4>
+  <button [disabled]="isDisabled" class="btn green">Button is {{ isDisabled ? 'Disabled' : 'Enabled' }}</button>
+</div>
+</div>

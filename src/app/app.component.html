@@ -1,13 +1,12 @@
 <router-outlet />
-<!-- <app-data-binding-demo></app-data-binding-demo>
-<app-directives-demo></app-directives-demo> -->
-
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Admin Panel</a>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Karlo's Angular</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor04">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item active">
           <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
@@ -18,6 +17,13 @@
           <a class="nav-link" routerLink="/post" routerLinkActive="active">Post</a>
         </li>
       </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
-  </nav>
-</div>
+  </div>
+</nav>
+
+<app-data-binding-demo></app-data-binding-demo>
+<app-directives-demo></app-directives-demo>
